@@ -16,3 +16,8 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+
+octets = int(mac.replace(":",""), 16)
+bin_2 = '{:b}'.format(octets)
+
+print(bin_2)

@@ -26,3 +26,32 @@
 """
 
 ip = "192.168.3.1"
+
+ip_split = ip.split('.') # ['192', '168', '3', '1']
+
+bin_10 = '{0:<8} {1:<8} {2:<8} {3:<8}'.format(
+    int(ip_split[0]),
+    int(ip_split[1]),
+    int(ip_split[2]),
+    int(ip_split[3])
+)
+
+print(bin_10)
+
+bin_2 = '{0:08b} {1:08b} {2:08b} {3:08b}'.format(
+    int(ip_split[0]),
+    int(ip_split[1]),
+    int(ip_split[2]),
+    int(ip_split[3])
+) # 11000000 10101000 00000011 00000001
+
+# bin_2 = '{0:8b} {1:8b} {2:8b} {3:8b}'.format(
+#     int(ip_split[0]),
+#     int(ip_split[1]),
+#     int(ip_split[2]),
+#     int(ip_split[3])
+# ) # 11000000 10101000       11        1
+
+print(bin_2)
+
+
