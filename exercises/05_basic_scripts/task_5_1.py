@@ -20,7 +20,6 @@ $ python task_5_1.py
 Все задания надо выполнять используя только пройденные темы. То есть эту задачу можно
 решить без использования условия if.
 """
-
 london_co = {
     "r1": {
         "location": "21 New Globe Walk",
@@ -46,3 +45,9 @@ london_co = {
         "routing": True,
     },
 }
+device_name = input('Enter device name:')
+get_input_device = london_co.setdefault(device_name)
+
+print(get_input_device)
+
+# print('device {}'.format(london_co))
