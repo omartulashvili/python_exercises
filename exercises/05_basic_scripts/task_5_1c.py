@@ -49,3 +49,13 @@ london_co = {
         "routing": True,
     },
 }
+
+device_name = input('Enter device name:')
+get_keys = ','.join(london_co[device_name].keys())
+device_character = input(f'Enter device character ({get_keys}): ')
+london_co.get(f'{device_character}','Такого ключа нет')
+
+
+print('\n' + '-' * 30)
+
+print(london_co[device_name][device_character])

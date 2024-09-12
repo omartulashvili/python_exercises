@@ -50,3 +50,13 @@ london_co = {
         "routing": True,
     },
 }
+
+device_name = input('Enter device name:')
+get_keys = ','.join(london_co[device_name].keys())
+device_character = input(f'Enter device character ({get_keys}): ')
+
+print('\n' + '-' * 30)
+get_device_name_and_type = london_co[device_name][device_character]
+
+print(get_device_name_and_type)
+
