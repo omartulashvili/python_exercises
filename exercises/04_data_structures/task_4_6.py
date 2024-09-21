@@ -32,8 +32,8 @@ Outbound Interface    {}
 # ['10.0.24.0/24', '[110/41]', 'via', '10.0.13.3,', '3d18h,', 'FastEthernet0/0']
 del_tab_ospf = ospf_route.split()
 
-result = template.format(*del_tab_ospf[0:1], *del_tab_ospf[1:2],
-                         *del_tab_ospf[3:4],
-                         *del_tab_ospf[4:5], *del_tab_ospf[5:6]
+result = template.format(del_tab_ospf[0:1], del_tab_ospf[1:2],
+                         del_tab_ospf[3:4],
+                         del_tab_ospf[4:5], del_tab_ospf[5:6]
                          )
 print(result)
