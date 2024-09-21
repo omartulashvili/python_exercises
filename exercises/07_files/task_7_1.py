@@ -23,24 +23,40 @@ Outbound Interface    {}
 """
 
 f = open("ospf.txt")
+result = []
 
-# ['10.0.24.0/24', '[110/41]', 'via', '10.0.13.3,', '3d18h,', 'FastEthernet0/0']
-get_list = f.readline().rstrip("\n").split()[1::]
+for line in f:
+    get_list = line.rstrip("\n").split()[1:]
+    result.append(get_list)
 
-prefix = get_list[0]
-ad_metric = get_list[1].strip('[]')
-next_hop = get_list[3].rstrip(',')
-last_update = get_list[4].rstrip(',')
-outbound_interface = get_list[5]
+    prefix = get_list[0]
+    ad_metric = get_list[1].strip('[]')
+    next_hop = get_list[3].rstrip(',')
+    last_update = get_list[4].rstrip(',')
+    outbound_interface = get_list[5]
 
-result = template.format(prefix, ad_metric, next_hop, last_update, outbound_interface)
+    formatted_output = template.format(prefix, ad_metric, next_hop, last_update, outbound_interface)
+    print(formatted_output)
 
-# Prefix                10.0.24.0/24
-# AD/Metric             110/41
-# Next-Hop              10.0.13.3
-# Last update           3d18h
-# Outbound Interface    FastEthernet0/0
-print(result)
+
+
+# # ['10.0.24.0/24', '[110/41]', 'via', '10.0.13.3,', '3d18h,', 'FastEthernet0/0']
+# get_list = f.readline().rstrip("\n").split()[1::]
+#
+# prefix = get_list[0]
+# ad_metric = get_list[1].strip('[]')
+# next_hop = get_list[3].rstrip(',')
+# last_update = get_list[4].rstrip(',')
+# outbound_interface = get_list[5]
+#
+# result = template.format(prefix, ad_metric, next_hop, last_update, outbound_interface)
+#
+# # Prefix                10.0.24.0/24
+# # AD/Metric             110/41
+# # Next-Hop              10.0.13.3
+# # Last update           3d18h
+# # Outbound Interface    FastEthernet0/0
+# print(result)
 
 
 
