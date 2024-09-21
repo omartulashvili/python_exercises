@@ -18,15 +18,16 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 """
 get_network = input("Введи ip адрес: ")
-ip_correct = False
+ip_octets = get_network.split(".")
+ip_correct = True
 
-while not ip_correct:
-    if len(get_network) < 4:
-        print("Пароль слишком длинный")
-    elif get_network.count(".") == 4:
-        print("что-то с точками")
-    elif
-
+if len(ip_octets) == 4:
+    ip_correct = False
+else:
+    for octets in ip_octets:
+        if not octets.isdigit() and int(octets) in range(0,255):
+            ip_correct = False
+            break
 
 ip_parts = int(get_network.split(".")[0])  # ['10', '0', '1', '1']
 
